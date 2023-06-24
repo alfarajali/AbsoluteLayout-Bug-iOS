@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp4.MainPage" BackgroundColor="White"
+             FlowDirection="RightToLeft">
+
+    <StackLayout>
+
+        <AbsoluteLayout VerticalOptions="FillAndExpand">
+
+            <Grid x:Name="GridOverLay" 
+      IsVisible="true"
+      AbsoluteLayout.LayoutBounds="0,0,1,1"
+     AbsoluteLayout.LayoutFlags="All"
+      VerticalOptions="FillAndExpand"
+      >
+
+                <CollectionView x:Name="touristCollectionList"
+                   SelectionMode="Single"
+                 
+                   Margin="15">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="#009688" Padding="15">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="20"/>
+                                </Border.StrokeShape>
+                                <StackLayout Spacing="10" VerticalOptions="Center" Orientation="Horizontal">
+
+
+                                    <Label Text="{Binding tourist_name}" VerticalOptions="Center"/>
+
+
+
+                                </StackLayout>
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </AbsoluteLayout>
+    </StackLayout>
+
+</ContentPage>
